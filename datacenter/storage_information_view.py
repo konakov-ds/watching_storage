@@ -1,5 +1,6 @@
-from datacenter.models import Visit
 from django.shortcuts import render
+
+from datacenter.models import Visit
 from datacenter.utils import get_duration
 
 

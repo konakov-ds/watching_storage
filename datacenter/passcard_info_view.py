@@ -1,8 +1,10 @@
-from datacenter.models import Passcard
-from datacenter.models import Visit
-from datacenter.utils import get_duration, is_visit_long
 from django.shortcuts import render
 from django.utils.timezone import localtime
+
+from datacenter.models import Passcard
+from datacenter.models import Visit
+from datacenter.utils import get_duration
+from datacenter.utils import is_visit_long
 
 
 def passcard_info_view(request, passcode):
