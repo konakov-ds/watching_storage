@@ -1,4 +1,11 @@
 import os
+from dotenv import load_dotenv, find_dotenv
+
+
+load_dotenv(find_dotenv())
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+DB_PASS = os.getenv('DB_PASS')
 
 DATABASES = {
     'default': {
@@ -7,13 +14,11 @@ DATABASES = {
         'PORT': '5434',
         'NAME': 'checkpoint',
         'USER': 'guard',
-        'PASSWORD': 'osim5',
+        'PASSWORD': DB_PASS,
     }
 }
 
 INSTALLED_APPS = ['datacenter']
-
-SECRET_KEY = 'REPLACE_ME'
 
 DEBUG = True
 
