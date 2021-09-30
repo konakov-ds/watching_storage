@@ -1,7 +1,9 @@
 import os
 from dotenv import load_dotenv, find_dotenv
+from environs import Env
 
-
+env = Env()
+env.read_env()
 load_dotenv(find_dotenv())
 
 SECRET_KEY = os.getenv('SECRET_KEY')
@@ -32,9 +34,9 @@ if DEBUG in ['true', 'True', 'TRUE']:
 elif DEBUG in ['false', 'False', 'FALSE']:
     DEBUG = False
 
-ROOT_URLCONF = "project.urls"
+ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
