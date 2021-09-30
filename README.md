@@ -6,10 +6,32 @@
 
 #### Для запуска программы
 
-установите необходимые пакеты:
+##### Установите необходимые пакеты:
 
-``` pip install -r requirements.txt ```
+``` 
+pip install -r requirements.txt 
+```
+##### Установите переменные окружения:
+- создайте файл .env с переменными окружения
+```
+ touch .env
+```
+- пропишите в фале значения переменных
+```
+SECRET_KEY=**** - Пароль к сайтку
 
-запустите программу:
+DB_ENGINE=django.db.backends.postgresql_psycopg2 - База данных
+DB_HOST=checkpoint.devman.org - Сервер базы данных
+DB_PORT=5434 - Порт
+DB_NAME=checkpoint - Имя базы данных
+DB_USER=guard - Пользователь базы данных
+DB_PASS=**** - Пароль базы данных
 
-``` python manage.py runserver ```
+DEBUG=false - Вывод ошибок при загрузке страницы
+ALLOWED_HOSTS=localhost,127.0.0.1 - Доступные хосты
+```
+##### Запустите программу:
+
+```
+ python manage.py runserver
+```
