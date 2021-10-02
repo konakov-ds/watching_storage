@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ```
 - пропишите в фале значения переменных
 ```
-SECRET_KEY=**** - Пароль к сайтку
+SECRET_KEY=**** - Ключ для криптографической подписи
 
 DB_ENGINE=django.db.backends.postgresql_psycopg2 - База данных
 DB_HOST=checkpoint.devman.org - Сервер базы данных
