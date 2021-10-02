@@ -1,18 +1,16 @@
 import os
-from dotenv import load_dotenv, find_dotenv
 from environs import Env
 
 env = Env()
 env.read_env()
-load_dotenv(find_dotenv())
 
-SECRET_KEY = os.getenv('SECRET_KEY')
-DB_ENGINE = os.getenv('DB_ENGINE')
-DB_HOST = os.getenv('DB_HOST')
-DB_PORT = os.getenv('DB_PORT')
-DB_NAME = os.getenv('DB_NAME')
-DB_USER = os.getenv('DB_USER')
-DB_PASS = os.getenv('DB_PASS')
+SECRET_KEY = env('SECRET_KEY')
+DB_ENGINE = env('DB_ENGINE')
+DB_HOST = env('DB_HOST')
+DB_PORT = env('DB_PORT')
+DB_NAME = env('DB_NAME')
+DB_USER = env('DB_USER')
+DB_PASS = env('DB_PASS')
 
 
 DATABASES = {
@@ -28,11 +26,7 @@ DATABASES = {
 
 INSTALLED_APPS = ['datacenter']
 
-DEBUG = os.getenv('DEBUG')
-if DEBUG in ['true', 'True', 'TRUE']:
-    DEBUG = True
-elif DEBUG in ['false', 'False', 'FALSE']:
-    DEBUG = False
+DEBUG = env.bool('DEBUG')
 
 ROOT_URLCONF = 'project.urls'
 
